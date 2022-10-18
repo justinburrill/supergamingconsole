@@ -1,5 +1,7 @@
 # justin burrill 14 10 22
 
+# RUN THIS FILE WITH THE BASH SCRIPT
+
 from tkinter import *
 from os import listdir
 
@@ -12,9 +14,16 @@ winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
 root.title("Home Screen")
 
-path = "./py"  # dir to look for games
 
-game_list = [f for f in listdir(path)]  # get list of games
+path = "./pyfiles"  # dir to look for games
+game_list = []
+
+try:
+    game_list = [f for f in listdir(path)]  # get list of games
+    print(game_list)
+except FileNotFoundError:
+    print("path not found")
+
 
 for game in game_list:
     game_name = Label(root, text=game)
