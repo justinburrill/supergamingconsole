@@ -6,8 +6,11 @@ from os import listdir
 
 root = Tk()  # put me at the top
 
-MONITOR_RES = "1600x900"  # i don't know if this is right
-root.geometry(MONITOR_RES)
+WINRES = [1280, 1024]
+winwidth = WINRES[0]
+winheight = WINRES[1]
+root.geometry(f"{winwidth}x{winheight}")
+root.title("Home Screen")
 
 path = "./py"  # dir to look for games
 
