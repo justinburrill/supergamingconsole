@@ -20,18 +20,35 @@ game_list = []
 
 try:
     game_list = [f for f in listdir(path)]  # get list of games
-    print(game_list)
+    # print(game_list)
 except FileNotFoundError:
     print("path not found")
 
+canvas_dict = {}
+canvas_list = []
 
 for game in game_list:
     game_name = Label(root, text=game)
     game_name.pack()
-    img = PhotoImage(file=f"ico/{game}.png")
+    # print(f"ico/{game[0:-3]}.png")
     canvas = Canvas(root, width=300, height=300)
-    canvas.pack()
-    canvas.create_image(20, 20, anchor=NW, image=img)
+    canvas_dict[game[0:-3]] = canvas
+    # print(f"canvas added to dict with name {game}")
 
+# # display
+# for key in canvas_dict.keys():
+#     imgname = f"ico/{key}.png"
+#     img = PhotoImage(file=imgname)
+
+#     canvas_dict[key].pack()
+#     canvas_dict[key].create_image(0, 0, anchor=NW, image=img)
+
+# display
+for itm in canvas_list:
+    imgname = f"ico/{}.png"
+    img = PhotoImage(file=imgname)
+
+    itm.pack()
+    itm.create_image(0, 0, anchor=NW, image=img)
 
 root.mainloop()
