@@ -2,9 +2,10 @@
 
 # RUN THIS FILE WITH THE BASH SCRIPT
 
+from functools import partial
 from tkinter import *
 from os import listdir
-
+import os
 
 root = Tk()  # put me at the top
 
@@ -14,19 +15,24 @@ winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
 root.title("Home Screen")
 
-path = ""
+path = "py/"
 
 game_list = [f for f in listdir(path)]  # get list of games
-print(game_list)
+# print(game_list)
 
 def rmpy(inp):
     return inp[0, -3]
+    
+def rungame(game):
+    print(f"running {game}")
+    os.system(f"python3 py/{game}")
 
 for i in range(len(game_list)):
     game = game_list[i]
 
     f = Frame(root)
-    button = Button(f, text=game)
+    print(f"game: {game}")
+    button = Button(f, text=game, command = partial(rungame, game))
     button.pack()
 
 
@@ -35,10 +41,14 @@ for i in range(len(game_list)):
     f.grid( row = 1, column = i, padx = padx , pady = pady)
 
 
-def rungame(game):
-    print(f"running {game}")
 
 
+# for itm in canvas_list:
+#     imgname = f"ico/{itm}.png"
+#     img = PhotoImage(file=imgname)
+
+#     itm.pack()
+#     itm.create_image(0, 0, anchor=NW, image=img)
 
 # working
 # frame = Frame(root)
@@ -71,11 +81,5 @@ def rungame(game):
 # display
 
 
-for itm in canvas_list:
-    imgname = f"ico/{}.png"
-    img = PhotoImage(file=imgname)
-
-    itm.pack()
-    itm.create_image(0, 0, anchor=NW, image=img)
 
 root.mainloop()
