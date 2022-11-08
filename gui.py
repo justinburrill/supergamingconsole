@@ -9,7 +9,7 @@ import os
 
 root = Tk()  # put me at the top
 
-WINRES = [1280, 1024]
+WINRES = [1440, 900]
 winwidth = WINRES[0]
 winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
@@ -22,7 +22,7 @@ game_list = [f for f in listdir(path)]  # get list of games
 
 def rmpy(inp):
     return inp[0, -3]
-    
+
 def rungame(game):
     print(f"running {game}")
     os.system(f"python3 py/{game}")
