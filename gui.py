@@ -13,7 +13,7 @@ from util_package import getres
 
 root = Tk()  # put me at the top
 
-WINRES = getres()
+WINRES = getres.getres()
 winwidth = WINRES[0]
 winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
