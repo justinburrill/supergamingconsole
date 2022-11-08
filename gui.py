@@ -1,5 +1,7 @@
 # justin burrill 14 10 22
 
+# RUN THIS FILE WITH THE BASH SCRIPT
+
 from tkinter import *
 from os import listdir
 
@@ -12,7 +14,7 @@ winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
 root.title("Home Screen")
 
-path = "./py"  # dir to look for games
+path = ""
 
 game_list = [f for f in listdir(path)]  # get list of games
 print(game_list)
@@ -58,5 +60,22 @@ def rungame(game):
 
 
 
+# # display
+# for key in canvas_dict.keys():
+#     imgname = f"ico/{key}.png"
+#     img = PhotoImage(file=imgname)
+
+#     canvas_dict[key].pack()
+#     canvas_dict[key].create_image(0, 0, anchor=NW, image=img)
+
+# display
+
+
+for itm in canvas_list:
+    imgname = f"ico/{}.png"
+    img = PhotoImage(file=imgname)
+
+    itm.pack()
+    itm.create_image(0, 0, anchor=NW, image=img)
 
 root.mainloop()
