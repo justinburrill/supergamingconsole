@@ -7,9 +7,13 @@ from tkinter import *
 from os import listdir
 import os
 
+import sys
+sys.path.insert(0, '/util_package/')
+from util_package import getres
+
 root = Tk()  # put me at the top
 
-WINRES = [1440, 900]
+WINRES = getres()
 winwidth = WINRES[0]
 winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
