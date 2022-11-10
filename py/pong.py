@@ -1,18 +1,21 @@
 from tkinter import *
 import random
 import sys
-sys.path.insert(0, '../util_package/')
+sys.path.append('.')
+print(f"sys.path: {sys.path}")
+
 from util_package import getres
+
 # Initialize window
 root = Tk()
 
-# Create canvas
 WINRES = getres.getres()
 winwidth = WINRES[0]
 winheight = WINRES[1]
 root.geometry(f"{winwidth}x{winheight}")
 root.title("Pong")
 
+# Create canvas
 _canvas = Canvas(root, height=winheight, width=winwidth)
 _canvas.configure(bg="#000000")
 _canvas.pack()

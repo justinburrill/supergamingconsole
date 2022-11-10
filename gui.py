@@ -7,8 +7,9 @@ from tkinter import *
 from os import listdir
 import os
 
-import sys
-sys.path.insert(0, '/util_package/')
+# import sys
+# sys.path.insert(0, '/util_package/')
+
 from util_package import getres
 
 root = Tk()  # put me at the top
@@ -35,7 +36,7 @@ for i in range(len(game_list)):
     game = game_list[i]
 
     f = Frame(root)
-    print(f"game: {game}")
+    # print(f"game: {game}")
     button = Button(f, text=game, command = partial(rungame, game))
     button.pack()
 

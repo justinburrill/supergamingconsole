@@ -1,13 +1,13 @@
 from tkinter import *
 import random
 import sys
-sys.path.insert(0, '..y/util_package/')
+sys.path.append('.')
 from util_package import getres
 
 # Initialize window
 root = Tk()
 
-WINRES = getres()
+WINRES = getres.getres()
 winwidth = WINRES[0]
 winheight = WINRES[1]
 
