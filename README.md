@@ -2,3 +2,5 @@ Since the beginning of the information age, large corporations have continually 
 
 
 Intended to work on one very specific arch setup. Run installdependencies.sh to download the games contained in other repos.
+
+Justin Burrill, Reid Carrell
